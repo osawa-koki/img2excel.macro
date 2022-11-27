@@ -1,0 +1,71 @@
+*           text=auto eol=lf
+
+*.txt       text
+*.md        text
+*.json      text
+*.yaml      text
+*.yml       text
+*.toml      text
+*.lock      text
+
+*.html      text
+*.scss      text
+*.css       text
+*.js        text
+*.ts        text
+*.tsx       text
+
+*.vue       text
+
+*.sln       text eol=crlf
+*.csproj    text eol=crlf
+*.vbproj    text eol=crlf
+*.cs        text eol=crlf
+*.vb        text eol=crlf
+*.fs        text eol=crlf
+*.vba       text eol=crlf
+
+*.sql       text
+
+*.go        text
+*.mod       text
+*.sum       text
+
+*.rs        text
+*.c         text
+*.cpp       text
+*.java      text
+
+*.swift     text
+*.kt        text
+
+*.py        text
+*.pl        text
+*.rb        text
+*.php       text
+*.r         text
+*.R         text
+
+*.hs        text
+*.lhs       text
+*.cabel     text
+
+*.ml        text
+*.ocaml     text
+*.scala     text
+
+*.sh        text
+*.bash      text
+*.zsh       text
+*.cmd       text eol=crlf
+*.bat       text eol=crlf
+*.ps1       text eol=crlf encoding=utf16le
+
+*.jpg       -text
+*.jpeg      -text
+*.png       -text
+*.webp      -text
+*.gif       -text
+*.bmp       -text
+
+*.db        -text
