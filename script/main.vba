@@ -29,7 +29,10 @@ Sub Main()
   ' ファイルフォーマットの判定
   Dim file_format As String
   file_format = Chr(HexToDec(bytes, 0, 0)) & Chr(HexToDec(bytes, 1, 1))
-  Debug.Print(file_format)
+  If file_format <> "BM" Then
+    MsgBox("Bitmapファイルを選択してください。")
+    Exit Sub
+  End If
 
   ' ファイルのヘッダ取得
   Dim width As Long '画像の横サイズ
