@@ -44,7 +44,6 @@ Sub Main()
   width = HexToDec(bytes, 18, 21)
   Dim height As Long '画像の縦サイズ
   height = HexToDec(bytes, 22, 25)
-
   Debug.Print("width -> " & CStr(width))
   Debug.Print("height -> " & CStr(height))
 
