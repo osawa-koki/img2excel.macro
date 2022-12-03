@@ -12,6 +12,11 @@ Sub Main()
   Set filename_raw = Nothing ' メモリの解放
   Debug.Print(filename)
 
+  ' ベースネームを取得
+  Dim sheet_name As String
+  sheet_name = CreateObject("Scripting.FileSystemObject").GetBaseName(filename)
+  Debug.Print(sheet_name)
+
   ' フリーファイル
   Dim free_file As Integer
   free_file = FreeFile()
@@ -46,11 +51,6 @@ Sub Main()
   ' ヘッダサイズの取得
   Dim header_size As Integer
   header_size = HexToDec(bytes, 10, 13)
-
-  ' ベースネームを取得
-  Dim sheet_name As String
-  sheet_name = CreateObject("Scripting.FileSystemObject").GetBaseName(filename)
-  Debug.Print(sheet_name)
 
 End Sub
 
