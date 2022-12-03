@@ -9,6 +9,6 @@ Sub Main()
   End If
   Dim filename As String
   filename = filename_raw
-  filename_raw = Nothing ' メモリの解放
+  Set filename_raw = Nothing ' メモリの解放
   Debug.Print(filename)
 End Sub
