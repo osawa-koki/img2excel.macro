@@ -26,6 +26,11 @@ Sub Main()
   Close #free_file
   Debug.Print(UBound(bytes))
 
+  ' ファイルフォーマットの判定
+  Dim file_format As String
+  file_format = Chr(HexToDec(bytes, 0, 0)) & Chr(HexToDec(bytes, 1, 1))
+  Debug.Print(file_format)
+
   ' ファイルのヘッダ取得
   Dim width As Long '画像の横サイズ
   width = HexToDec(bytes, 18, 21)
