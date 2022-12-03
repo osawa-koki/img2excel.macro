@@ -50,6 +50,7 @@ Sub Main()
   ' ヘッダサイズの取得
   Dim header_size As Integer
   header_size = HexToDec(bytes, 10, 13)
+  Debug.Print("header_size -> " & CStr(header_size))
 
 End Sub
 
