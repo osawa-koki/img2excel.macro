@@ -44,8 +44,11 @@ Sub Main()
   width = HexToDec(bytes, 18, 21)
   Dim height As Long '画像の縦サイズ
   height = HexToDec(bytes, 22, 25)
+  Dim pixel_count As Long '画像のピクセル数
+  pixel_count = width * height
   Debug.Print("width -> " & CStr(width))
   Debug.Print("height -> " & CStr(height))
+  Debug.Print("pixel_count -> " & CStr(pixel_count))
 
   ' ヘッダサイズの取得
   Dim header_size As Integer
@@ -74,6 +77,25 @@ Sub Main()
   sheet.Range(Rows(1), Rows(height + 1)).RowHeight = pixel_size * 0.75
   sheet.Range(Columns(1), Columns(width + 1)).ColumnWidth = pixel_size * 0.0594
 
+  Dim colors() As PixelInfo ' 色配列
+  ReDim colors(pixel_count) ' 色配列のサイズをセット
+  Dim pixel_counter As Integer
+  Dim pixel_total As Long
+  pixel_total = UBound(bytes)
+  For pixel_counter = header_size To pixel_total - 1 Step 4
+    Dim B As Integer
+    Dim G As Integer
+    Dim R As Integer
+    B = HexToDec(bytes, pixel_counter, pixel_counter)
+    G = HexToDec(bytes, pixel_counter + 1, pixel_counter + 1)
+    R = HexToDec(bytes, pixel_counter + 2, pixel_counter + 2)
+    Dim index As Integer
+    index = (pixel_counter - header_size) / 4
+    Set colors(index) = New PixelInfo
+    colors(index).Color = RGB(R, G, B)
+    colors(index).X = (index / 4) Mod width
+    colors(index).Y = height - (index / 4) \ width - 1
+  Next pixel_counter
 
 End Sub
 
