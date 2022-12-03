@@ -47,6 +47,11 @@ Sub Main()
   Dim header_size As Integer
   header_size = HexToDec(bytes, 10, 13)
 
+  ' ベースネームを取得
+  Dim sheet_name As String
+  sheet_name = CreateObject("Scripting.FileSystemObject").GetBaseName(filename)
+  Debug.Print(sheet_name)
+
 End Sub
 
 ' 連続したバイト配列の値を10進数に変換する関数
