@@ -14,3 +14,9 @@ VBAの関数とか構文とか知らなかったこと、備忘録として。
 Openステートメントを使用して開いたファイルのサイズをバイト単位で表す長整数型(Long)の値を返します。[^1]  
 
 [^1]: <https://learn.microsoft.com/ja-jp/office/vba/language/reference/user-interface-help/lof-function>
+
+## Getステートメント
+
+開いているディスク ファイルから変数にデータを読み込む。[^2]  
+
+[^2]: <https://learn.microsoft.com/ja-jp/office/vba/language/reference/user-interface-help/get-statement>
