@@ -18,4 +18,12 @@ Sub Main()
 
   ' バイト格納用の配列
   Dim bytes() As Byte ' バイト配列
+
+  ' ファイルをバイト配列に読み込む
+  Open filename For Binary As #free_file ' バイナリモードでファイルを開く
+    ReDim bytes(LOF(free_file)) ' バイト配列のサイズをセット
+    Get #free_file, 1, bytes ' バイト配列にデータを格納
+  Close #free_file
+  Debug.Print(UBound(bytes))
+
 End Sub
