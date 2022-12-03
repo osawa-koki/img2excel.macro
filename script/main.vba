@@ -68,6 +68,13 @@ Sub Main()
   sheet.Name = sheet_name
   sheet.Activate
 
+  ' 行と列のサイズを設定
+  Dim pixel_size As Integer
+  pixel_size = 2
+  sheet.Range(Rows(1), Rows(height + 1)).RowHeight = pixel_size * 0.75
+  sheet.Range(Columns(1), Columns(width + 1)).ColumnWidth = pixel_size * 0.0594
+
+
 End Sub
 
 ' 連続したバイト配列の値を10進数に変換する関数
