@@ -1,6 +1,5 @@
 Option Explicit
 
-'画像ファイルをシート上に展開するプログラム
 Sub Main()
   ' ファイルの読み込み
   Dim filename_raw As Variant
