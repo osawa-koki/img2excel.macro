@@ -55,6 +55,20 @@ Sub Main()
   header_size = HexToDec(bytes, 10, 13)
   Debug.Print("header_size -> " & CStr(header_size))
 
+  ' カラーパレットの取得
+  Dim color_palette As Integer
+  color_palette = HexToDec(bytes, 28, 29)
+  Debug.Print("color_palette -> " & CStr(color_palette))
+  Select Case color_palette
+    Case 24
+      color_palette = 3
+    Case 32
+      color_palette = 4
+    Case Else
+      MsgBox("カラーパレットが24bitまたは32bitではありません。")
+      Exit Sub
+  End Select
+
   ' シートの削除
   Application.DisplayAlerts = False ' メッセージを非表示
   Dim ws As Worksheet
@@ -81,7 +95,7 @@ Sub Main()
   Dim pixel_counter As Integer
   Dim pixel_total As Long
   pixel_total = UBound(bytes)
-  For pixel_counter = header_size To pixel_total - 1 Step 4
+  For pixel_counter = header_size To pixel_total - 1 Step color_palette
     Dim B As Integer
     Dim G As Integer
     Dim R As Integer
@@ -89,7 +103,7 @@ Sub Main()
     G = HexToDec(bytes, pixel_counter + 1, pixel_counter + 1)
     R = HexToDec(bytes, pixel_counter + 2, pixel_counter + 2)
     Dim index As Integer
-    index = (pixel_counter - header_size) / 4
+    index = (pixel_counter - header_size) / color_palette
     Set colors(index) = New PixelInfo
     colors(index).Color = RGB(R, G, B)
     colors(index).X = index Mod width
@@ -124,7 +138,7 @@ Sub Main()
     Dim color As Long
     color = colors(x_index).Color
     sheet.Cells(y + 1, x + 1).Interior.Color = color
-  Next x_index
+  Next pixel_counter
 
 End Sub
 
