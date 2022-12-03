@@ -27,3 +27,14 @@ Sub Main()
   Debug.Print(UBound(bytes))
 
 End Sub
+
+' 連続したバイト配列の値を10進数に変換する関数
+Function HexToDec(ByRef databuf, start, end) As Long
+  Dim i As Long
+  Dim temp As String ' 16進数を格納する文字列配列
+  temp = ""
+  For i = end To start Step -1 ' 後ろから処理
+    temp = temp + Right("00" & Hex(databuf(i)), 2) ' 10進数を16進数に変換
+  Next
+  HexToDec = Val("&H" & temp) ' 16進数を10進数に変換
+End Function
