@@ -62,6 +62,12 @@ Sub Main()
   Next ws
   Application.DisplayAlerts = True  ' メッセージを表示
 
+  ' シートの追加
+  Dim sheet As Worksheet
+  Set sheet = Worksheets.Add
+  sheet.Name = sheet_name
+  sheet.Activate
+
 End Sub
 
 ' 連続したバイト配列の値を10進数に変換する関数
