@@ -77,6 +77,7 @@ Sub Main()
   sheet.Range(Rows(1), Rows(height + 1)).RowHeight = pixel_size * 0.75
   sheet.Range(Columns(1), Columns(width + 1)).ColumnWidth = pixel_size * 0.0594
 
+  ' ピクセルデータの作成
   Dim colors() As PixelInfo ' 色配列
   ReDim colors(pixel_count) ' 色配列のサイズをセット
   Dim pixel_counter As Integer
