@@ -15,4 +15,7 @@ Sub Main()
   ' フリーファイル
   Dim free_file As Integer
   free_file = FreeFile()
+
+  ' バイト格納用の配列
+  Dim bytes() As Byte ' バイト配列
 End Sub
