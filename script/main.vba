@@ -117,14 +117,16 @@ Sub Main()
 
   ' ピクセルデータの書き込み
   For pixel_counter = 0 To pixel_count - 1
+    DIm x_index As Integer
+    x_index = randoms(pixel_counter)
     Dim x As Integer
-    x = colors(pixel_counter).X
+    x = colors(x_index).X
     Dim y As Integer
-    y = colors(pixel_counter).Y
+    y = colors(x_index).Y
     Dim color As Long
-    color = colors(pixel_counter).Color
+    color = colors(x_index).Color
     sheet.Cells(y + 1, x + 1).Interior.Color = color
-  Next pixel_counter
+  Next x_index
 
 End Sub
 
