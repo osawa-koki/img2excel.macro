@@ -11,4 +11,8 @@ Sub Main()
   filename = filename_raw
   Set filename_raw = Nothing ' メモリの解放
   Debug.Print(filename)
+
+  ' フリーファイル
+  Dim free_file As Integer
+  free_file = FreeFile()
 End Sub
