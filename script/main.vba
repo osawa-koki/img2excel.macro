@@ -52,6 +52,16 @@ Sub Main()
   header_size = HexToDec(bytes, 10, 13)
   Debug.Print("header_size -> " & CStr(header_size))
 
+  ' シートの削除
+  Application.DisplayAlerts = False ' メッセージを非表示
+  Dim ws As Worksheet
+  For Each ws In Worksheets
+    If ws.Name = sheet_name Then
+      ws.Delete
+    End If
+  Next ws
+  Application.DisplayAlerts = True  ' メッセージを表示
+
 End Sub
 
 ' 連続したバイト配列の値を10進数に変換する関数
