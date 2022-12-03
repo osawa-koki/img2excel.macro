@@ -98,6 +98,23 @@ Sub Main()
     colors(index).Y = height - index \ width - 1
   Next pixel_counter
 
+  ' ランダム配列
+  Dim randoms() As Integer
+  ReDim randoms(pixel_count)
+  Dim random_counter As Integer
+  For random_counter = 0 To pixel_count - 1
+    randoms(random_counter) = random_counter
+  Next random_counter
+  Dim random_index As Integer
+  For random_index = 0 To pixel_count - 1
+    Dim random As Integer
+    random = Int(Rnd() * pixel_count)
+    Dim temp As Integer
+    temp = randoms(random_index)
+    randoms(random_index) = randoms(random)
+    randoms(random) = temp
+  Next random_index
+
   ' ピクセルデータの書き込み
   For pixel_counter = 0 To pixel_count - 1
     Dim x As Integer
