@@ -43,6 +43,10 @@ Sub Main()
   Debug.Print("width -> " & CStr(width))
   Debug.Print("height -> " & CStr(height))
 
+  ' ヘッダサイズの取得
+  Dim header_size As Integer
+  header_size = HexToDec(bytes, 10, 13)
+
 End Sub
 
 ' 連続したバイト配列の値を10進数に変換する関数
