@@ -26,6 +26,15 @@ Sub Main()
   Close #free_file
   Debug.Print(UBound(bytes))
 
+  ' ファイルのヘッダ取得
+  Dim width As Long '画像の横サイズ
+  width = HexToDec(bytes, 18, 21)
+  Dim height As Long '画像の縦サイズ
+  height = HexToDec(bytes, 22, 25)
+
+  Debug.Print("width -> " & CStr(width))
+  Debug.Print("height -> " & CStr(height))
+
 End Sub
 
 ' 連続したバイト配列の値を10進数に変換する関数
