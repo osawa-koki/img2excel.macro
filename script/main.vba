@@ -72,8 +72,8 @@ Sub Main()
   sheet.Activate
 
   ' 行と列のサイズを設定
-  sheet.Range(Rows(1), Rows(height)).RowHeight = 3.75
-  sheet.Range(Columns(1), Columns(width)).ColumnWidth = 0.38
+  sheet.Range(Rows(1), Rows(height)).RowHeight = 7.5
+  sheet.Range(Columns(1), Columns(width)).ColumnWidth = 0.77
 
   ' ピクセルデータの作成
   Dim colors() As PixelInfo ' 色配列
