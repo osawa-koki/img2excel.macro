@@ -74,8 +74,8 @@ Sub Main()
   ' 行と列のサイズを設定
   Dim pixel_size As Integer
   pixel_size = 2
-  sheet.Range(Rows(1), Rows(height + 1)).RowHeight = pixel_size * 0.75
-  sheet.Range(Columns(1), Columns(width + 1)).ColumnWidth = pixel_size * 0.0594
+  sheet.Range(Rows(1), Rows(height)).RowHeight = pixel_size * 0.75
+  sheet.Range(Columns(1), Columns(width)).ColumnWidth = pixel_size * 0.0594
 
   ' ピクセルデータの作成
   Dim colors() As PixelInfo ' 色配列
@@ -94,8 +94,19 @@ Sub Main()
     index = (pixel_counter - header_size) / 4
     Set colors(index) = New PixelInfo
     colors(index).Color = RGB(R, G, B)
-    colors(index).X = (index / 4) Mod width
-    colors(index).Y = height - (index / 4) \ width - 1
+    colors(index).X = index Mod width
+    colors(index).Y = height - index \ width - 1
+  Next pixel_counter
+
+  ' ピクセルデータの書き込み
+  For pixel_counter = 0 To pixel_count - 1
+    Dim x As Integer
+    x = colors(pixel_counter).X
+    Dim y As Integer
+    y = colors(pixel_counter).Y
+    Dim color As Long
+    color = colors(pixel_counter).Color
+    sheet.Cells(y + 1, x + 1).Interior.Color = color
   Next pixel_counter
 
 End Sub
