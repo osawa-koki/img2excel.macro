@@ -15,7 +15,7 @@ Sub Main()
   ' ベースネームを取得
   Dim sheet_name As String
   sheet_name = CreateObject("Scripting.FileSystemObject").GetBaseName(filename)
-  Debug.Print(sheet_name)
+  Debug.Print("ベースネーム -> " & sheet_name)
 
   ' フリーファイル
   Dim free_file As Integer
