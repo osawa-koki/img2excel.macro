@@ -44,3 +44,11 @@ PixelInfoクラスを記述するクラスモジュールのオブジェクト�
 「Debug.Print」関数の引数に渡した値が表示されます。  
 
 緑色の矢印ボタンから実行することができます。  
+
+## その他
+
+- [Excelの購入(MS公式サイト)](https://www.microsoft.com/ja-jp/microsoft-365)  
+
+## 参考文献
+
+- [今すぐ使えるかんたん Excelマクロ＆VBA](https://gihyo.jp/book/2019/978-4-297-10241-8)  
