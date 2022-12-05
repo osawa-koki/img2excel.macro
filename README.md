@@ -48,6 +48,7 @@ PixelInfoクラスを記述するクラスモジュールのオブジェクト�
 ## その他
 
 - [Excelの購入(MS公式サイト)](https://www.microsoft.com/ja-jp/microsoft-365)  
+- [youtube](https://www.youtube.com/watch?v=7pCFmrjIB6E)
 
 ## 参考文献
 
